@@ -15,6 +15,8 @@
     --slate-frame: #2e2f40;
 
     --soft-charcoal: rgba(0, 0, 0, 0.3);
+
+    --base-white: #ffffff;
 }
 
 * {
@@ -41,7 +43,6 @@ body {
     height: 500px;
 
     border: 2px solid var(--slate-frame);
-    border-radius: 10px;
 
     box-shadow: 0 0 10px var(--soft-charcoal);
 
@@ -106,7 +107,7 @@ img {
     width: 40px;
     height: 42px;
 
-    animation: moonMoves 30s linear infinite;
+    animation: moonMoves 40s linear infinite;
 }
 
 @keyframes moonMoves {
@@ -191,5 +192,76 @@ img {
     50% {
         background-color: var(--butter-glow);
         box-shadow: 0 0 15px 6px var(--butter-glow);
+    }
+}
+
+.star {
+    position: absolute;
+
+    z-index: 0;
+
+    background: var(--base-white);
+
+    opacity: 0.5;
+
+    animation-name: twinkle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.star-1,
+.star-3,
+.star-4 {
+    width: 2px;
+    height: 2px;
+}
+
+.star-2,
+.star-5 {
+    width: 1px;
+    height: 1px;
+}
+
+.star-1 {
+    top: 20px;
+    left: 80px;
+
+    animation-duration: 1s;
+}
+
+.star-2 {
+    top: 100px;
+    left: 230px;
+
+    animation-duration: 2s;
+}
+
+.star-3 {
+    top: 50px;
+    right: 100px;
+
+    animation-duration: 3s;
+}
+
+.star-4 {
+    top: 210px;
+    right: 150px;
+
+    animation-duration: 4s;
+}
+
+.star-5 {
+    top: 280px;
+    left: 35px;
+
+    animation-duration: 5s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3; transform: scale(1);
+    }
+    50% {
+        opacity: 1; transform: scale(1.3);
     }
 }
